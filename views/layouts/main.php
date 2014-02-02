@@ -25,16 +25,16 @@ use yii\widgets\Menu;
 	<div class="header">
 		<h1><?= Html::a('My company', ['/site/index']) ?></h1>
 	<?= Menu::widget([
-			'items' => [
-				['label' => 'Home', 'url' => ['/site/index']],
-				['label' => 'About', 'url' => ['/site/about']],
-				Yii::$app->user->isGuest ?
-					['label' => 'Login', 'url' => ['/site/login']] :
-					[
-						'label' => 'Logout (' . Yii::$app->user->identity->username . ')' ,
-						'url' => ['/site/logout'],
-						'template' => '<a data-method="post" href="{url}">{label}</a>',
-					],
+		'items' => [
+			['label' => 'Home', 'url' => ['/site/index']],
+			['label' => 'About', 'url' => ['/site/about']],
+			Yii::$app->user->isGuest ?
+				['label' => 'Login', 'url' => ['/site/login']] :
+				[
+					'label' => 'Logout (' . Yii::$app->user->identity->username . ')' ,
+					'url' => ['/site/logout'],
+					'template' => '<a data-method="post" href="{url}">{label}</a>',
+				],
 			],
 		]);
 	?>
