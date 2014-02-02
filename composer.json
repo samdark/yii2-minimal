@@ -1,0 +1,33 @@
+{
+	"name": "samdark/yii2-minimal",
+	"description": "Yii 2 minimal Application Template",
+	"keywords": ["yii", "framework", "minimal", "application template"],
+	"homepage": "https://github.com/samdark/yii2-minimal",
+	"type": "project",
+	"license": "BSD-3-Clause",
+	"support": {
+		"issues": "https://github.com/samdark/yii2-minimal/issues?state=open",
+		"source": "https://github.com/samdark/yii2-minimal"
+	},
+	"minimum-stability": "dev",
+	"require": {
+		"yiisoft/yii2": "*"
+	},
+	"scripts": {
+		"post-create-project-cmd": [
+			"yii\\composer\\Installer::setPermission"
+		]
+	},
+	"config": {
+		"process-timeout": 1800
+	},
+	"extra": {
+		"writable": [
+			"runtime",
+			"web/assets"
+		],
+		"executable": [
+			"yii"
+		]
+	}
+}
