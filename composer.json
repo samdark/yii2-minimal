@@ -15,7 +15,8 @@
 	},
 	"scripts": {
 		"post-create-project-cmd": [
-			"yii\\composer\\Installer::setPermission"
+			"yii\\composer\\Installer::setPermission",
+			"yii\\composer\\Installer::generateCookieValidationKey"
 		]
 	},
 	"config": {
