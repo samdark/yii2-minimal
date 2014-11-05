@@ -38,6 +38,7 @@ at [getcomposer.org](http://getcomposer.org/doc/00-intro.md#installation-nix).
 You can then install this application template using the following command:
 
 ~~~
+php composer.phar global require "fxp/composer-asset-plugin:1.0.0-beta4"
 php composer.phar create-project --prefer-dist --stability=dev samdark/yii2-minimal path/to/your/project
 ~~~
 
@@ -58,11 +59,11 @@ Edit the file `config/db.php` with real data, for example:
 
 ```php
 return [
-	'class' => 'yii\db\Connection',
-	'dsn' => 'mysql:host=localhost;dbname=yii2minimal',
-	'username' => 'root',
-	'password' => '1234',
-	'charset' => 'utf8',
+    'class' => 'yii\db\Connection',
+    'dsn' => 'mysql:host=localhost;dbname=yii2minimal',
+    'username' => 'root',
+    'password' => '1234',
+    'charset' => 'utf8',
 ];
 ```
 
