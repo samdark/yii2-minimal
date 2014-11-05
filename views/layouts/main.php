@@ -13,7 +13,7 @@ use yii\widgets\Menu;
 <head>
     <meta charset="<?= Yii::$app->charset ?>"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-        <?= Html::csrfMetaTags() ?>
+	<?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <link rel="stylesheet" href="<?= Yii::$app->request->getBaseUrl() ?>/css/site.css"/>
     <?php $this->head() ?>
@@ -32,7 +32,7 @@ use yii\widgets\Menu;
                 [
                     'label' => 'Logout (' . Yii::$app->user->identity->username . ')' ,
                     'url' => ['/site/logout'],
-                    'linkOptions' => ['data-method' => 'post']],
+                    'linkOptions' => ['data-method' => 'post'],
                 ],
             ],
         ]);
