@@ -38,8 +38,8 @@ at [getcomposer.org](http://getcomposer.org/doc/00-intro.md#installation-nix).
 You can then install this application template using the following command:
 
 ~~~
-php composer.phar global require "fxp/composer-asset-plugin:1.0.0-beta4"
-php composer.phar create-project --prefer-dist --stability=dev samdark/yii2-minimal path/to/your/project
+composer global require "fxp/composer-asset-plugin:1.0.0"
+composer create-project --prefer-dist --stability=dev samdark/yii2-minimal path/to/your/project
 ~~~
 
 Now you should be able to access the application through the following URL, assuming your server webroot is pointed to
