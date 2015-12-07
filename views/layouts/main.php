@@ -11,7 +11,7 @@ use yii\widgets\Menu;
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
 <head>
-    <meta charset="<?= Yii::$app->charset ?>"/>
+    <meta charset="<?= Yii::$app->charset ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
@@ -19,7 +19,6 @@ use yii\widgets\Menu;
     <?php $this->head() ?>
 </head>
 <body>
-
 <?php $this->beginBody() ?>
     <div class="header">
         <h1><?= Html::a('My company', ['/site/index']) ?></h1>
@@ -27,16 +26,20 @@ use yii\widgets\Menu;
         'items' => [
             ['label' => 'Home', 'url' => ['/site/index']],
             ['label' => 'About', 'url' => ['/site/about']],
-            Yii::$app->user->isGuest ?
-                ['label' => 'Login', 'url' => ['/site/login']] :
-                [
-                    'label' => 'Logout (' . Yii::$app->user->identity->username . ')' ,
-                    'url' => ['/site/logout'],
-                    'linkOptions' => ['data-method' => 'post'],
-                ],
-            ],
-        ]);
-    ?>
+            Yii::$app->user->isGuest ? (
+                ['label' => 'Login', 'url' => ['/site/login']]
+            ) : (
+                '<li>'
+                . Html::beginForm(['/site/logout'], 'post')
+                . Html::submitButton(
+                    'Logout (' . Yii::$app->user->identity->username . ')',
+                    ['class' => 'btn btn-link']
+                )
+                . Html::endForm()
+                . '</li>'
+            ),
+        ]
+    ]) ?>
     </div>
 
     <div class="content">

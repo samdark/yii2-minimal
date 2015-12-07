@@ -38,7 +38,7 @@ at [getcomposer.org](http://getcomposer.org/doc/00-intro.md#installation-nix).
 You can then install this application template using the following command:
 
 ~~~
-composer global require "fxp/composer-asset-plugin:1.0.0"
+php composer global require "fxp/composer-asset-plugin:~1.1.0"
 composer create-project --prefer-dist --stability=dev samdark/yii2-minimal path/to/your/project
 ~~~
 
@@ -67,6 +67,6 @@ return [
 ];
 ```
 
-**NOTE:** Yii won't create the database for you, this has to be done manually before you can access it.
-
-Also check and edit the other files in the `config/` directory to customize your application.
+**NOTES:**
+- Yii won't create the database for you, this has to be done manually before you can access it.
+- Check and edit the other files in the `config/` directory to customize your application as required.

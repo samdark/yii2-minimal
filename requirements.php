@@ -85,12 +85,6 @@ $requirements = array(
         'by' => '<a href="http://www.yiiframework.com/doc-2.0/yii-caching-memcache.html">MemCache</a>',
         'memo' => extension_loaded('memcached') ? 'To use memcached set <a href="http://www.yiiframework.com/doc-2.0/yii-caching-memcache.html#$useMemcached-detail">MemCache::useMemcached</a> to <code>true</code>.' : ''
     ),
-    array(
-        'name' => 'APC extension',
-        'mandatory' => false,
-        'condition' => extension_loaded('apc'),
-        'by' => '<a href="http://www.yiiframework.com/doc-2.0/yii-caching-apccache.html">ApcCache</a>',
-    ),
     // CAPTCHA:
     array(
         'name' => 'GD PHP extension with FreeType support',
@@ -107,13 +101,6 @@ $requirements = array(
         'memo' => $imagickMemo,
     ),
     // PHP ini :
-    'phpSafeMode' => array(
-        'name' => 'PHP safe mode',
-        'mandatory' => false,
-        'condition' => $requirementsChecker->checkPhpIniOff("safe_mode"),
-        'by' => 'File uploading and console command execution',
-        'memo' => '"safe_mode" should be disabled at php.ini',
-    ),
     'phpExposePhp' => array(
         'name' => 'Expose PHP',
         'mandatory' => false,
@@ -136,4 +123,15 @@ $requirements = array(
         'memo' => 'PHP mail SMTP server required',
     ),
 );
+
+// OPcache check
+if (!version_compare(phpversion(), '5.5', '>=')) {
+    $requirements[] = array(
+        'name' => 'APC extension',
+        'mandatory' => false,
+        'condition' => extension_loaded('apc'),
+        'by' => '<a href="http://www.yiiframework.com/doc-2.0/yii-caching-apccache.html">ApcCache</a>',
+    );
+}
+
 $requirementsChecker->checkYii()->check($requirements)->render();

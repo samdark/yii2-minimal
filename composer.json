@@ -11,15 +11,15 @@
     },
     "minimum-stability": "dev",
     "require": {
-        "yiisoft/yii2": "*"
+        "yiisoft/yii2": "~2.0.7"
+    },
+    "config": {
+        "process-timeout": 1800
     },
     "scripts": {
         "post-create-project-cmd": [
             "yii\\composer\\Installer::postCreateProject"
         ]
-    },
-    "config": {
-        "process-timeout": 1800
     },
     "extra": {
         "yii\\composer\\Installer::postCreateProject": {
@@ -38,6 +38,5 @@
                 "npm-asset-library": "vendor/npm",
                 "bower-asset-library": "vendor/bower"
             }
-
     }
 }
