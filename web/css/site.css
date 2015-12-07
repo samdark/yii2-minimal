@@ -20,6 +20,18 @@ body {
     margin-left: .5em;
 }
 
+.header ul li form {
+    display: inline;
+}
+
+.header ul li form input[type=submit] {
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+}
+
 .header ul a {
     text-decoration: none;
     padding: .5em;

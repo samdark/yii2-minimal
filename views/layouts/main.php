@@ -1,4 +1,7 @@
 <?php
+$csrfParam = Yii::$app->request->csrfParam;
+$csrfToken = Yii::$app->request->csrfToken;
+
 use yii\helpers\Html;
 use yii\widgets\Menu;
 
@@ -29,14 +32,17 @@ use yii\widgets\Menu;
             Yii::$app->user->isGuest ? (
                 ['label' => 'Login', 'url' => ['/site/login']]
             ) : (
-                '<li>'
-                . Html::beginForm(['/site/logout'], 'post')
-                . Html::submitButton(
-                    'Logout (' . Yii::$app->user->identity->username . ')',
-                    ['class' => 'btn btn-link']
-                )
-                . Html::endForm()
-                . '</li>'
+                [
+                    'url' => ['/site/logout'],
+                    'label' => 'Logout (' . Yii::$app->user->identity->username . ')',
+                    'template' => <<<HTML
+<form method="post" action="{url}">
+<input type="hidden" name="{$csrfParam}" value="{$csrfToken}" />
+<input type="submit" value="{label}" />
+</form>
+HTML
+,
+                ]
             ),
         ]
     ]) ?>
