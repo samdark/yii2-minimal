@@ -32,7 +32,7 @@ use yii\widgets\Menu;
                 [
                     'label' => 'Logout (' . Yii::$app->user->identity->username . ')' ,
                     'url' => ['/site/logout'],
-                    'linkOptions' => ['data-method' => 'post'],
+                    'template' => '<a href="{url}" data-method="post">{label}</a>',
                 ],
             ],
         ]);
