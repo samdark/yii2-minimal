@@ -11,11 +11,16 @@
     },
     "minimum-stability": "stable",
     "require": {
-        "yidas/yii2-bower-asset": "*",
-        "yiisoft/yii2": "~2.0.7"
+        "yiisoft/yii2": "~2.0.14"
     },
     "config": {
-        "process-timeout": 1800
+        "process-timeout": 1800,
+        "fxp-asset": {
+            "installer-paths": {
+                "npm-asset-library": "vendor/npm",
+                "bower-asset-library": "vendor/bower"
+            }
+        }
     },
     "scripts": {
         "post-create-project-cmd": [
@@ -24,20 +29,16 @@
     },
     "extra": {
         "yii\\composer\\Installer::postCreateProject": {
-                "setPermission": [
-                    {
-                        "runtime": "0777",
-                        "web/assets": "0777",
-                        "yii": "0755"
-                    }
-                ],
-                "generateCookieValidationKey": [
-                    "config/web.php"
-                ]
-            },
-            "asset-installer-paths": {
-                "npm-asset-library": "vendor/npm",
-                "bower-asset-library": "vendor/bower"
-            }
+            "setPermission": [
+                {
+                    "runtime": "0777",
+                    "web/assets": "0777",
+                    "yii": "0755"
+                }
+            ],
+            "generateCookieValidationKey": [
+                "config/web.php"
+            ]
+        }
     }
 }
