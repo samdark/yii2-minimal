@@ -1,6 +1,3 @@
-The yii2-minimal is free software. It is released under the terms of
-the following BSD License.
-
 Copyright © 2014 by Alexander Makarov (http://rmcreative.ru/)
 All rights reserved.
 
@@ -14,9 +11,8 @@ are met:
    notice, this list of conditions and the following disclaimer in
    the documentation and/or other materials provided with the
    distribution.
- * Name of Alexander Makarov may be used to endorse or promote
-   products derived from this software without specific prior
-   written permission.
+ * Name of Alexander Makarov may not be used to endorse or promote products derived
+   from this software without specific prior written permission.
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
 "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
